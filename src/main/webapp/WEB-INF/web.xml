@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+         version="6.0">
+
+    <!-- Esto activa el funcionamiento de JSF -->
+    <servlet>
+        <!-- Asigna un nombre al servlet -->
+        <servlet-name>Faces Servlet</servlet-name>
+
+        <!-- Especifica la clase que implementa el servlet JSF -->
+        <servlet-class>jakarta.faces.webapp.FacesServlet</servlet-class>
+
+        <!-- Indica que el servlet debe cargarse al iniciar la aplicación -->
+        <!-- El valor 1 significa que se cargará primero -->
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <!-- Mapea el servlet definido anteriormente, usando el nombre "Faces Servlet" -->
+        <servlet-name>Faces Servlet</servlet-name>
+
+        <!-- Establece el patrón de URL que este servlet manejará -->
+        <!-- Aquí, cualquier URL que comience con /faces/ será manejada por el Faces Servlet -->
+        <url-pattern>/faces/*</url-pattern>
+    </servlet-mapping>
+
+    <welcome-file-list>
+        <!-- Define la página de bienvenida de la aplicación web -->
+        <!-- Aquí, se especifica que la página de inicio es faces/index.xhtml -->
+        <welcome-file>faces/index.xhtml</welcome-file>
+    </welcome-file-list>
+
+    <!--EN CONCLUSION ESTO EN TOMCAT 10.1.26 ESTO NO HACE ABSOLUTAMENTE NADA YA QUE YA ESTA PREPARADO PARA EJECUTAR XHTML
+    Lo unico que hace algo entre comillas es: Welcome-File-List -->
+</web-app>
