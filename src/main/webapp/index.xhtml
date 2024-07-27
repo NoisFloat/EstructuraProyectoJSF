@@ -6,6 +6,16 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 <h:body>
-    <h:outputLabel value="Aguacate"/>
+    <!--Uso de formularios para el uso de managed beans-->
+    <h:form>
+        <table>
+            <tr>
+                <td><h:outputLabel for="nombre" value="Nombre:"/> </td>
+                <td><h:inputText id="nombre" value="#{candidato.nombre}"/> </td>
+                <td><h:message for="nombre"/></td>
+
+            </tr>
+        </table>
+    </h:form>
 </h:body>
 </html>
